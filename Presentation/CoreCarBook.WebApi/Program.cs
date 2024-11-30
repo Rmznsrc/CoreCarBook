@@ -1,4 +1,5 @@
 using CoreCarBook.Application.Features.CQRS.Handlers.AboutHandlers;
+using CoreCarBook.Application.Features.CQRS.Handlers.BannerHandlers;
 using CoreCarBook.Application.Interfaces;
 using CoreCarBook.Persistance.Context;
 using CoreCarBook.Persistance.Repositories;
@@ -14,6 +15,12 @@ builder.Services.AddScoped<GetAboutByIdQueryHandler>();
 builder.Services.AddScoped<CreateAboutCommandHandler>();
 builder.Services.AddScoped<UpdateAboutCommandHandler>();
 builder.Services.AddScoped<RemoveAboutCommandHandler>();
+
+builder.Services.AddScoped<GetBannerQueryHandler>();
+builder.Services.AddScoped<GetBannerByIdQueryHandler>();
+builder.Services.AddScoped<CreateBannerCommandHandler>();
+builder.Services.AddScoped<UpdateBannerCommandHandler>();
+builder.Services.AddScoped<RemoveBannerQueryHandler>();
 
 
 builder.Services.AddControllers();
