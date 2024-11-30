@@ -27,7 +27,7 @@ namespace CoreCarBook.WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> AboutList()
         {
-            var values = await _getAboutByIdQueryHandler.Handle();
+            var values = await _getAboutQueryHandler.Handle();
             return Ok(values);
         }
         [HttpGet("{id}")]
