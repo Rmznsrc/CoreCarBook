@@ -1,11 +1,28 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CoreCarBook.Dto.BannerDtos;
+using CoreCarBook.Dto.CarDtos;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace CoreCarBook.WebUI.ViewComponents.DefaultViewComponents
 {
     public class _DefaultCoverUILayoutComponentPartial:ViewComponent
-    {
-        public IViewComponentResult Invoke()
+    { 
+
+        private readonly IHttpClientFactory _httpClientFactory;
+        public _DefaultCoverUILayoutComponentPartial(IHttpClientFactory httpClientFactory)
         {
+            _httpClientFactory = httpClientFactory;
+        }
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("https://localhost:7026/api/Banners");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<ResultBannerDto>>(jsonData);
+                return View(values);
+            }
             return View();
         }
     }

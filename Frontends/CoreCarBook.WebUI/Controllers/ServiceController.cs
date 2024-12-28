@@ -16,7 +16,7 @@ namespace CoreCarBook.WebUI.Controllers
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:7193/api/Services");
+            var responseMessage = await client.GetAsync("https://localhost:7026/api/Services");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
