@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 
 namespace CoreCarBook.Application.Features.Mediator.Handlers.AuthorHandlers
 {
-    public class GetAuthorByIdQueryHandler:IRequestHandler<GetAuthorByIdQuery,GetAuthorByIdQueryResult>
+    public class GetBlogByIdQueryHandler:IRequestHandler<GetAuthorByIdQuery,GetAuthorByIdQueryResult>
     {
         private readonly IRepository<Author> _repository;
 
-        public GetAuthorByIdQueryHandler(IRepository<Author> repository)
+        public GetBlogByIdQueryHandler(IRepository<Author> repository)
         {
             _repository = repository;
         }

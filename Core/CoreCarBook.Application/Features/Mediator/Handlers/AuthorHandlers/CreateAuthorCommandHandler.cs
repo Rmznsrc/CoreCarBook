@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace CoreCarBook.Application.Features.Mediator.Handlers.AuthorHandlers
 {
-    public class CreateAuthorCommandHandler : IRequestHandler<CreateAuthorCommand>
+    public class CreateBlogCommandHandler : IRequestHandler<CreateAuthorCommand>
     {
         private readonly IRepository<Author> _repository;
 
-        public CreateAuthorCommandHandler(IRepository<Author> repository)
+        public CreateBlogCommandHandler(IRepository<Author> repository)
         {
             _repository = repository;
         }
