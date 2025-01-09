@@ -5,10 +5,12 @@ using CoreCarBook.Application.Features.CQRS.Handlers.CarHandlers;
 using CoreCarBook.Application.Features.CQRS.Handlers.CategoryHandlers;
 using CoreCarBook.Application.Features.CQRS.Handlers.ContactHandlers;
 using CoreCarBook.Application.Interfaces;
+using CoreCarBook.Application.Interfaces.BlogInterfaces;
 using CoreCarBook.Application.Interfaces.CarInterfaces;
 using CoreCarBook.Application.Services;
 using CoreCarBook.Persistance.Context;
 using CoreCarBook.Persistance.Repositories;
+using CoreCarBook.Persistance.Repositories.BlogRepositories;
 using CoreCarBook.Persistance.Repositories.CarRepositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +19,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<CarBookContext>();
 builder.Services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
 builder.Services.AddScoped(typeof(ICarRepository),typeof(CarRepository));
+builder.Services.AddScoped(typeof(IBlogRepository),typeof(BlogRepository));
 
 builder.Services.AddScoped<GetAboutQueryHandler>();
 builder.Services.AddScoped<GetAboutByIdQueryHandler>();
