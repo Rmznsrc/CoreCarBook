@@ -19,7 +19,7 @@ namespace CoreCarBook.WebUI.ViewComponents.BlogViewComponents
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<ResultB>(jsonData);
+                var values = JsonConvert.DeserializeObject<GetBlogById>(jsonData);
                 return View(values);
             }
 
