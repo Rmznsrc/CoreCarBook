@@ -47,6 +47,13 @@ namespace CoreCarBook.WebApi.Controllers
             await _mediator.Send(new RemoveTagCloudCommand(id));
             return Ok("TagCloud silindi.");
         }
-        
+        [HttpGet("GetTagClodByBlogId")]
+        public async Task<IActionResult> GetTagClodByBlogId(int id)
+        {
+            var values = await _mediator.Send(new GetTagCloudByBlogIdQuery(id));
+            return Ok(values);
+        }
+
+
     }
 }
