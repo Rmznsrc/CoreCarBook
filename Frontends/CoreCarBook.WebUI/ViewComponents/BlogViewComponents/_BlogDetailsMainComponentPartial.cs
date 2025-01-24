@@ -14,6 +14,7 @@ namespace CoreCarBook.WebUI.ViewComponents.BlogViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync(int id)
         {
+            ViewBag.blogid = id;
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync($"https://localhost:7193/api/Blogs/"+id);
             if (responseMessage.IsSuccessStatusCode)
@@ -21,8 +22,7 @@ namespace CoreCarBook.WebUI.ViewComponents.BlogViewComponents
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<GetBlogById>(jsonData);
                 return View(values);
-            }
-
+            } 
             return View();
         }
     }
