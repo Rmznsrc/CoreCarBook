@@ -87,10 +87,10 @@ namespace CoreCarBook.WebUI.Controllers
             ViewBag.BrandValues = brandValues;
 
 
-            var resposenMessage = await client.GetAsync($"https://localhost:7193/api/Cars/{id}");
-            if (resposenMessage.IsSuccessStatusCode)
+            var responseMessage = await client.GetAsync($"https://localhost:7193/api/Cars/{id}");
+            if (responseMessage.IsSuccessStatusCode)
             {
-                var jsonData = await resposenMessage.Content.ReadAsStringAsync();
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<UpdateCarDto>(jsonData);
                 return View(values);
             }
