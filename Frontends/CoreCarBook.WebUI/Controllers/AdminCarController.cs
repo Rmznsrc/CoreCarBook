@@ -3,8 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
 using System.Text;
-using UdemyCarBook.Dto.BrandDtos;
-using UdemyCarBook.Dto.CarDtos;
+using CoreCarBook.Dto.BrandDtos; 
 
 namespace CoreCarBook.WebUI.Controllers
 {
