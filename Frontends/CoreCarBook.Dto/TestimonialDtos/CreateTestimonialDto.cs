@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace CoreCarBook.Dto.TestimonialDtos
 {
-    public class ResultTestimonialDto
-    {
-        public int TestimonialID { get; set; }
+    public class CreateTestimonialDto
+    { 
         public string Name { get; set; }
         public string Title { get; set; }
         public string Comment { get; set; }

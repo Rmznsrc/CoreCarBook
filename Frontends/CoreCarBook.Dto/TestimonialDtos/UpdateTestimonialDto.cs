@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoreCarBook.Dto.TestimonialDtos
 {
-    public class ResultTestimonialDto
+    public class UpdateTestimonialDto
     {
         public int TestimonialID { get; set; }
         public string Name { get; set; }
