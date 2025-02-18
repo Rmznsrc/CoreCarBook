@@ -23,6 +23,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreCarBook.WebUI", "Fronte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreCarBook.Dto", "Frontends\CoreCarBook.Dto\CoreCarBook.Dto.csproj", "{0709F5AE-3738-44E6-95EC-63FDDB6824DC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ToDoList", "ToDoList", "{378EF1A8-E81F-4737-A8EB-20C303D54B82}"
+	ProjectSection(SolutionItems) = preProject
+		StatisticList.txt = StatisticList.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

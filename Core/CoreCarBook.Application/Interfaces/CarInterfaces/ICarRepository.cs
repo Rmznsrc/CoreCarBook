@@ -12,5 +12,6 @@ namespace CoreCarBook.Application.Interfaces.CarInterfaces
         List<Car> GetCarsListWithBrands();
         List<Car> GetLast5CarsWithBrands();
         List<Car> GetCarsWithPricings();
+        int GetCarCount();
     }
 }
