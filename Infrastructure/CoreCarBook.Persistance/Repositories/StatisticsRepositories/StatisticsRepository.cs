@@ -12,6 +12,12 @@ namespace CoreCarBook.Persistance.Repositories.StatisticsRepositories
     public class StatisticsRepository : IStatisticsRepository
     {
         private readonly CarBookContext _context;
+
+        public StatisticsRepository(CarBookContext context)
+        {
+            _context = context;
+        }
+
         public string GetBlogTitleByMaxBlogComment()
         {
             //Select Top(1) BlogId,Count(*) as 'Sayi' From Comments Group By BlogID Order By Sayi Desc 
