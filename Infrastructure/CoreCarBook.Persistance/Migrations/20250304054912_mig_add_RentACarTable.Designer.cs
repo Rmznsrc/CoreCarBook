@@ -4,6 +4,7 @@ using CoreCarBook.Persistance.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CoreCarBook.Persistance.Migrations
 {
     [DbContext(typeof(CarBookContext))]
-    partial class CarBookContextModelSnapshot : ModelSnapshot
+    [Migration("20250304054912_mig_add_RentACarTable")]
+    partial class mig_add_RentACarTable 
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -452,6 +455,9 @@ namespace CoreCarBook.Persistance.Migrations
                     b.Property<int>("LocationID")
                         .HasColumnType("int");
 
+                    b.Property<int>("PickUpLocationID")
+                        .HasColumnType("int");
+
                     b.HasKey("RentACarId");
 
                     b.HasIndex("CarID");
@@ -459,7 +465,7 @@ namespace CoreCarBook.Persistance.Migrations
                     b.HasIndex("LocationID");
 
                     b.ToTable("RentACars");
-                }); 
+                });
 
             modelBuilder.Entity("CoreCarBook.Domain.Entities.Service", b =>
                 {
