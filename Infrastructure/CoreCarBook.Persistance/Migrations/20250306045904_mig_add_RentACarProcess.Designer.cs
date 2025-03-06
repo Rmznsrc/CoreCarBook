@@ -4,6 +4,7 @@ using CoreCarBook.Persistance.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CoreCarBook.Persistance.Migrations
 {
     [DbContext(typeof(CarBookContext))]
-    partial class CarBookContextModelSnapshot : ModelSnapshot
+    [Migration("20250306045904_mig_add_RentACarProcess")]
+    partial class mig_add_RentACarProcess
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -500,18 +503,18 @@ namespace CoreCarBook.Persistance.Migrations
                     b.Property<int>("DropOfLocation")
                         .HasColumnType("int");
 
-                    b.Property<DateOnly>("DropOffDate")
-                        .HasColumnType("Date");
+                    b.Property<DateTime>("DropOffDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("DropOffDescription")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<TimeOnly>("DropOffTime")
-                        .HasColumnType("Time");
+                        .HasColumnType("time");
 
-                    b.Property<DateOnly>("PickUpDate")
-                        .HasColumnType("Date");
+                    b.Property<DateTime>("PickUpDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("PickUpDescription")
                         .IsRequired()
@@ -521,7 +524,7 @@ namespace CoreCarBook.Persistance.Migrations
                         .HasColumnType("int");
 
                     b.Property<TimeOnly>("PickUpTime")
-                        .HasColumnType("Time");
+                        .HasColumnType("time");
 
                     b.Property<decimal>("TotalPrice")
                         .HasColumnType("decimal(18,2)");
